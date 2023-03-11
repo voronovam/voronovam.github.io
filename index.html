@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="f638dc" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#212121" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>voronovam | frontender</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <time id="time"></time>
+        </header>
+
+        <main class="main">
+            <div>
+                <div>Hi! My&nbsp;name is&nbsp;Marina. I&nbsp;am a&nbsp;Frontend Developer.</div>
+                <div class="contacts">
+                    <a class="btn" href="https://github.com/voronovam" target="_blank">github</a>
+                    <a class="btn" href="https://t.me/voronovacom" target="_blank">telegram</a>
+                    <a class="btn" href="mailto:voronova.dev@gmail.com" target="_blank">email</a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <script>document.write(new Date().getFullYear());</script>
+        </footer>
+    </div>
+
+    <script>
+        const timeNode = document.getElementById('time');
+
+        function getCurrentTimeString() {
+            return new Date().toTimeString().replace(/ .*/, '');
+        }
+
+        setInterval(() => timeNode.innerHTML = getCurrentTimeString(), 1000);
+    </script>
+</body>
+</html>
