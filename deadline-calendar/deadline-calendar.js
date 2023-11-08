@@ -16,7 +16,7 @@ const rusMonths = {
 const inputDeadline = document.getElementById('inputDeadline');
 const deadline = document.getElementById('deadline');
 const calendar = document.getElementById('calendar');
-const exportButton = document.getElementById('exportCalendar');
+//const exportButton = document.getElementById('exportCalendar');
 
 //формат даты
 function formatRusDate(date) {
@@ -34,7 +34,7 @@ inputDeadline.addEventListener('change', function () {
         alert('Время истекло. Выбери новую дату.');
         inputDeadline.value = '';
     } else {
-        exportButton.classList.remove('hide');
+        //exportButton.classList.remove('hide');
         setTimeout(function (){ //для корректной отрисовки выбранной даты
             displayCalendar(currentDate, selectedDate);
         }, 10);
@@ -119,20 +119,20 @@ if (savedDeadline) {
     const currentDate = new Date();
 
     if (savedDate >= currentDate) {
-        exportButton.classList.remove('hide');
+        //exportButton.classList.remove('hide');
         displayCalendar(currentDate, savedDate);
     }
 }
 
-exportButton.addEventListener('click', () => {
+/*exportButton.addEventListener('click', () => {
     const element = calendar;
     const opt = {
-        margin:       .2,
+        margin:       .1,
         filename:     'deadline_calendar.pdf',
-        html2canvas:  { scale: 2 },
+        //html2canvas:  { scale: 1 },
         jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
     };
     html2pdf(element, opt);
-});
+});*/
 
 

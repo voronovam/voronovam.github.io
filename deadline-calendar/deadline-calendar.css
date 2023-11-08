@@ -47,7 +47,7 @@ button {
 
 .calendar {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 }
 @media screen {
     .calendar {
@@ -70,18 +70,6 @@ button {
 }
 
 .calendar__index {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     font-size: 4.5rem;
     padding: 4px 8px;
-    border-top: 1px solid;
-    border-right: 1px solid;
-}
-
-@media screen {
-    .calendar__index {
-        border-top: 1px solid #76f8b1;
-        border-right: 1px solid #76f8b1;
-    }
 }
