@@ -73,6 +73,7 @@ button {
     position: absolute;
     bottom: 0;
     left: 0;
+    font-size: 4.5rem;
     padding: 4px 8px;
     border-top: 1px solid;
     border-right: 1px solid;

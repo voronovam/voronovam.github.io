@@ -62,6 +62,8 @@ function displayCalendar(start, end) {
 
     end.setDate(end.getDate() + 1);
 
+    /*
+    // index от меньшего к большему
     let index = 0;
 
     while (start <= end) {
@@ -71,6 +73,27 @@ function displayCalendar(start, end) {
         const innerDiv = document.createElement('div');
         innerDiv.classList.add('calendar__index');
         innerDiv.textContent = ++index;
+
+        const textDiv = document.createElement('div');
+        textDiv.textContent = formatRusDate(start.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }));
+
+        dateDiv.appendChild(innerDiv);
+        dateDiv.appendChild(textDiv);
+        calendar.appendChild(dateDiv);
+
+        start.setDate(start.getDate() + 1);
+    }*/
+
+    // index от большего к меньшему
+    const daysCount = Math.floor((end - start) / (1000 * 60 * 60 * 24)) + 1;
+
+    for (let i = daysCount; i >= 1; i--) {
+        const dateDiv = document.createElement('div');
+        dateDiv.classList.add('calendar__day');
+
+        const innerDiv = document.createElement('div');
+        innerDiv.classList.add('calendar__index');
+        innerDiv.textContent = i;
 
         const textDiv = document.createElement('div');
         textDiv.textContent = formatRusDate(start.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }));
